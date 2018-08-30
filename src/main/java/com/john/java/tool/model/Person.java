@@ -28,6 +28,7 @@ public class Person {
         List<String> nick = new ArrayList<>();
         nick.add("rod");
         nick.add("john");
+        person.setNick(nick);
         return person;
     }
 

@@ -19,12 +19,19 @@ public class T1ToString {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
+
+
     @Test
-    public void toString1() throws Exception {
-        System.out.println(objectMapper.writeValueAsString(new Person()));
-        //        {"id":1,"name":"john","birthdate":1533279263535,"nick":["rod","john"]}
+    public void toString10() throws Exception {
+        System.out.println(objectMapper.writeValueAsString(Person.getPerson()));
+        //{"id":1,"count":200,"name":"john","birthdate":1533360379431,"nick":["rod","john"]}
+    }
+
+    @Test
+    public void toString11() throws Exception {
         System.out.println(objectMapper.writeValueAsString(Person.getPersons()));
-        //      [{"id":1,"name":"john","birthdate":1533279769192,"nick":["rod","john"]},{"id":1,"name":"john","birthdate":1533279769192,"nick":["rod","john"]}]
+        //[{"id":1,"name":"john","birthdate":1533279769192,"nick":["rod","john"]},
+        // {"id":1,"name":"john","birthdate":1533279769192,"nick":["rod","john"]}]
     }
 
 
@@ -45,7 +52,7 @@ public class T1ToString {
 
     @Test
     /**
-     *
+     * objectMapper 设置
      */
     public void toString2() throws Exception {
 
@@ -55,6 +62,7 @@ public class T1ToString {
         objectMapper.registerModule(simpleModule);
 
         System.out.println(objectMapper.writeValueAsString(Person.getPerson()));
+        //{"id":1,"count":"200","name":"john","birthdate":1535612334831,"nick":["rod","john"]}
     }
 
 }

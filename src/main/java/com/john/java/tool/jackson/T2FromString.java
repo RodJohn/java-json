@@ -16,9 +16,20 @@ public class T2FromString {
     /**
      * 反序列化  --
      */
-    public void fromString1() throws Exception {
+    public void fromString10() throws Exception {
         Person person = objectMapper.readValue(Person.personStr, Person.class);
         System.out.println(person);
+    }
+
+    @Test
+    /**
+     * 反序列化数组
+     */
+    public void fromString11() throws Exception {
+        Person person = objectMapper.readValue(Person.personStr, Person.class);
+        System.out.println(person);
+        List<Person> persons = objectMapper.readValue(Person.personsStr, new TypeReference<List<Person>>() {});
+        System.out.println(persons);
     }
 
 
@@ -39,17 +50,6 @@ public class T2FromString {
 
 
 
-
-    @Test
-    /**
-     * 反序列化数组
-     */
-    public void fromString2() throws Exception {
-        Person person = objectMapper.readValue(Person.personStr, Person.class);
-        System.out.println(person);
-        List<Person> persons = objectMapper.readValue(Person.personsStr, new TypeReference<List<Person>>() {});
-        System.out.println(persons);
-    }
 
 
 
